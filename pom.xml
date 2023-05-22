@@ -8,6 +8,11 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <liquibase.propertyFile>${project.basedir}/src/main/resources/liquibase.properties</liquibase.propertyFile>
+
+        <!--        Database properties        -->
+        <url.database></url.database>
+        <user.database></user.database>
+        <password.database></password.database>
     </properties>
     <version>1.0-SNAPSHOT</version>
     <name>web-app Maven Webapp</name>
@@ -45,6 +50,16 @@
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
             <version>4.22.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-model</artifactId>
+            <version>3.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-core</artifactId>
+            <version>3.5.0</version>
         </dependency>
     </dependencies>
 
