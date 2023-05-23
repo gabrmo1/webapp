@@ -8,7 +8,7 @@ public class ConnectionFactory {
 
     public static Connection getConnection() {
         try {
-            String url = "";
+            String url = ""; // exemplo : jdbc:mysql://localhost:3306/webapp
             String user = "";
             String password = "";
 
