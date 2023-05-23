@@ -16,7 +16,7 @@ import java.sql.Connection;
 import java.util.List;
 
 @WebServlet("/consultar-procedimentos")
-public class ConsultaProcedimentoServlet extends HttpServlet {
+public class ConsultarProcedimentosServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,6 +40,8 @@ public class ConsultaProcedimentoServlet extends HttpServlet {
 
         if (dados.isEmpty()) {
             request.setAttribute("validation", "* Nenhum procedimento encontrado");
+
+            //Os erros encontrados em teste são corrigidos na camada de visualização com JS.
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/");
             requestDispatcher.forward(request, response);
         } else {
