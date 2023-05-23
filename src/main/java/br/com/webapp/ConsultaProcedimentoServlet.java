@@ -44,7 +44,7 @@ public class ConsultaProcedimentoServlet extends HttpServlet {
             requestDispatcher.forward(request, response);
         } else {
             request.setAttribute("data", dados);
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/verifica-procedimento-scriptlet.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/tabela-procedimentos-scriptlet.jsp");
             requestDispatcher.forward(request, response);
         }
     }

@@ -5,24 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-image: url("./img/Glass-building-bottom-view-skyscrapers_3840x2160.jpg");
-            background-size: 3000px;
-            background-repeat: no-repeat;
-            background-position: center center;
-            padding-top: 98px;
-        }
+    <link rel="stylesheet" href="css/registrar-procedimentos.css">
 
-        .container {
-            max-width: 400px;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 0 auto;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-    </style>
     <title>Tela de Cadastro</title>
 </head>
 <body>
@@ -35,7 +19,7 @@
         </div>
         <div class="form-group">
             <label for="idade">Idade:</label>
-            <input type="number" class="form-control" id="idade" placeholder="Digite a idade">
+            <input type="number" class="form-control" id="idade" placeholder="Digite a idade" maxlength="3">
         </div>
         <div class="form-group">
             <label>Gênero:</label><br>
@@ -62,39 +46,6 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#cadastroForm').submit(function(e) {
-            e.preventDefault();
-
-            var procedimento = $('#procedimento').val();
-            var idade = $('#idade').val();
-            var genero = $('input[name="genero"]:checked').val();
-            var permitido = $('#permitido').val();
-
-            if (!procedimento || !idade || !genero) {
-                alert('Preencha todos os campos')
-            } else {
-                $.ajax({
-                    url: '/web-app/registrar-procedimentos',
-                    type: 'POST',
-                    data: {
-                        procedimento: procedimento,
-                        idade: idade,
-                        genero: genero,
-                        permitido: permitido
-                    },
-                    success: function(response) {
-                        window.location.href = '/web-app'
-                        alert('Cadastro realizado com sucesso')
-                    },
-                    error: function(xhr, status, error) {
-                        console.log(error);
-                    }
-                });
-            }
-        });
-    });
-</script>
+<script src="js/registrar-procedimentos.js"></script>
 </body>
 </html>
