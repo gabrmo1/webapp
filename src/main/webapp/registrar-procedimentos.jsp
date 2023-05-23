@@ -57,7 +57,7 @@
         </div>
         <hr/>
         <button type="submit" class="btn btn-primary w-100">Enviar</button>
-        <a class="btn btn-default w-100" href="/">Voltar</a>
+        <a class="btn btn-default w-100" href="/web-app">Voltar</a>
     </form>
 </div>
 
@@ -76,7 +76,7 @@
                 alert('Preencha todos os campos')
             } else {
                 $.ajax({
-                    url: '/registrar-procedimentos',
+                    url: '/web-app/registrar-procedimentos',
                     type: 'POST',
                     data: {
                         procedimento: procedimento,
@@ -85,7 +85,7 @@
                         permitido: permitido
                     },
                     success: function(response) {
-                        window.location.href = '/'
+                        window.location.href = '/web-app'
                         alert('Cadastro realizado com sucesso')
                     },
                     error: function(xhr, status, error) {

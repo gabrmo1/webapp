@@ -13,7 +13,7 @@
 <body>
 <div class="container">
     <h2 class="text-center mb-4">Tabela de Dados</h2>
-    <a href="/">Voltar</a>
+    <a href="/web-app">Voltar</a>
     <table class="table table-striped">
         <thead>
         <tr>

@@ -48,7 +48,7 @@
                 if (!procedimento || !idade || !genero) {
                     alert('Preencha todos os campos')
                 } else {
-                    window.location.href = '/consultar-procedimentos?procedimento=' + procedimento + '&idade=' + idade + '&genero=' + genero;
+                    window.location.href = '/web-app/consultar-procedimentos?procedimento=' + procedimento + '&idade=' + idade + '&genero=' + genero;
                 }
             });
         });
@@ -85,9 +85,9 @@
         <hr/>
         <button type="submit" class="btn btn-primary w-100">Consultar</button>
         <p class="text-danger position-absolute"><%= request.getAttribute("validation") != null ? request.getAttribute("validation") : "" %></p>
-        <a href="/consultar-procedimentos" class="btn-create">Visualizar procedimentos cadastrados</a>
+        <a href="/web-app/consultar-procedimentos" class="btn-create">Visualizar procedimentos cadastrados</a>
     </form>
-    <a href="/registrar-procedimentos" class="btn-create">Cadastrar novo procedimento</a>
+    <a href="/web-app/registrar-procedimentos" class="btn-create">Cadastrar novo procedimento</a>
 </div>
 </body>
 </html>
