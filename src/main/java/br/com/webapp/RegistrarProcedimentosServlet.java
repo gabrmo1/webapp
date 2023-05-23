@@ -39,7 +39,7 @@ public class RegistrarProcedimentosServlet extends HttpServlet {
         if (procedimentos.isEmpty()) {
             dao.save(new Procedimento(null, nroProcedimento, idade, genero, permitido));
         } else {
-            throw new RuntimeException("Já existe um procedimento cadastrado com estes dados.");
+            throw new RuntimeException();
         }
     }
 }
