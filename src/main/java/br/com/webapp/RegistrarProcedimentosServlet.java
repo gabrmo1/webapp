@@ -13,9 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
+import java.util.List;
 
 @WebServlet("registrar-procedimentos")
-public class RegistraProcedimentoServlet extends HttpServlet {
+public class RegistrarProcedimentosServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,7 +25,7 @@ public class RegistraProcedimentoServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
         Connection connection = ConnectionFactory.getConnection();
         ProcedimentoDAO dao = new ProcedimentoDAO(connection);
 
@@ -33,6 +34,12 @@ public class RegistraProcedimentoServlet extends HttpServlet {
         Genero genero = Genero.valueOf(request.getParameter("genero").toUpperCase());
         Boolean permitido = Boolean.valueOf(request.getParameter("permitido"));
 
-        dao.save(new Procedimento(null, nroProcedimento, idade, genero, permitido));
+        List<Procedimento> procedimentos = dao.findByParams(nroProcedimento, idade, genero);
+
+        if (procedimentos.isEmpty()) {
+            dao.save(new Procedimento(null, nroProcedimento, idade, genero, permitido));
+        } else {
+            throw new RuntimeException("Já existe um procedimento cadastrado com estes dados.");
+        }
     }
 }

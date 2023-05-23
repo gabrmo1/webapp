@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    $('#cadastroForm').submit(function(e) {
+$(document).ready(function () {
+    $('#cadastroForm').submit(function (e) {
         e.preventDefault();
 
         const procedimento = $('#procedimento').val();
@@ -24,12 +24,12 @@ $(document).ready(function() {
                     genero: genero,
                     permitido: permitido
                 },
-                success: function(response) {
+                success: function (response) {
                     window.location.href = '/web-app'
                     alert('Cadastro realizado com sucesso')
                 },
-                error: function(xhr, status, error) {
-                    console.log(error);
+                error: function (error) {
+                    alert('Já existe um procedimento cadastrado com estes dados.');
                 }
             });
         }
