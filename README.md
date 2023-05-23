@@ -1,6 +1,10 @@
 # Webapp
 
-Para a utilização da aplicação sem o uso do Docker, será necessário:
+## Requisitos obrigatórios:
+* jdk-11
+* Apache Maven - *v3+*
+
+## Para a utilização da aplicação sem o uso do Docker, será necessário:
 * 1 - Configuração dos arquivos que se referem a bancos de dados, apontando para um banco existente
 * 2 - Executar script para criação de Tabela e linhas iniciais no banco de dados
 * 3 - Configurar servidor de aplicação JBoss (O projeto foi desenvolvido utilizando a versão *Wildfly-16.0.0.Final*)
