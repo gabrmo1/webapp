@@ -4,6 +4,8 @@
 * jdk-11
 * Apache Maven - *v3+*
 
+*Obs: A aplicação por padrão ficará no endereço [http://localhost:8080/web-app](http://localhost:8080/web-app)*
+
 ## Para a utilização da aplicação sem o uso do Docker, será necessário:
 * 1 - Configuração dos arquivos que se referem a bancos de dados, apontando para um banco existente
 * 2 - Executar script para criação de Tabela e linhas iniciais no banco de dados
