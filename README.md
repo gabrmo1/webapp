@@ -89,7 +89,7 @@ O endereço vai ser descrito na propriedade 'IPAddress'
 
 dentro do diretório do projeto, utilize o comando
 
-``` mvn clean package ```
+``` mvn clean package -DskipTests ```
 
 ### Cria uma imagem de acordo com as configurações escritas no Dockerfile
 ``` docker build -t webapp . ```
