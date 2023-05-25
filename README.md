@@ -99,6 +99,8 @@ dentro do diretório do projeto, utilize o comando
 - mapeando as portas 8080 e 9990 do container com as da máquina *(-p 8080:8080 -p 9990:9990)*,
 - faz com que as configurações do servidor possam ser acessadas a partir do ip local da máquina *(/opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0)*
 
+*Obs: caso queira utilizar um banco de dados já existente que esteja rodando em seu ip local, troque o "--net mynet" por "--net host".*
+
 ``` docker run --net mynet -it --rm -p 8080:8080 -p 9990:9990 webapp /opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 ```
 
 ---
