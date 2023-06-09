@@ -116,6 +116,10 @@ public class ProcedimentoDAO implements IProcedimentoDAO {
         return procedimentos;
     }
 
+    public List<Procedimento> findByParams(Procedimento procedimento) {
+        return findByParams(procedimento.getNroProcedimento(), procedimento.getIdade(), procedimento.getGenero());
+    }
+
     public List<Procedimento> findByParams(String nroProcedimento, Integer idade, Genero genero) {
         String sql = "SELECT id, nroProcedimento, idade, genero, permitido FROM Procedimento p " +
                 "WHERE p.nroProcedimento = ? " +
