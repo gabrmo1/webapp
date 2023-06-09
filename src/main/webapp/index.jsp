@@ -14,15 +14,16 @@
 <%
 %>
 <div class="container">
-    <h2 class="text-center mb-4">Consulta de Procedimentos</h2>
+    <img src="css/img/Unimed_box_logo.svg.png">
+    <h3 class="text-center mb-4"><b>Consultar Procedimento</b></h3>
     <form>
         <div class="form-group">
             <label for="procedimento">Procedimento:</label>
-            <input type="number" class="form-control" id="procedimento" placeholder="Digite o procedimento">
+            <input type="number" class="form-control" id="procedimento" placeholder="Ex: 1234">
         </div>
         <div class="form-group">
             <label for="idade">Idade:</label>
-            <input type="number" class="form-control" id="idade" placeholder="Digite a idade">
+            <input type="number" class="form-control" id="idade" placeholder="Ex: 20">
         </div>
         <div class="form-group">
             <label>Gênero:</label><br>
