@@ -48,10 +48,29 @@ public class RegistrarProcedimentosService {
     }
 
     public Procedimento getProcedimentoObjectFromRequest(HttpServletRequest request) {
-        String nroProcedimento = request.getParameter("procedimento");
-        Integer idade = Integer.parseInt(request.getParameter("idade"));
-        Genero genero = Genero.valueOf(request.getParameter("genero").toUpperCase());
-        Boolean permitido = Boolean.valueOf(request.getParameter("permitido"));
+        String nroProcedimentoStr = request.getParameter("procedimento");
+        String nroProcedimento = null;
+        if (nroProcedimentoStr != null && !nroProcedimentoStr.isBlank()) {
+            nroProcedimento = nroProcedimentoStr;
+        }
+
+        String idadeStr = request.getParameter("idade");
+        Integer idade = null;
+        if (idadeStr != null && !idadeStr.isBlank()) {
+            idade = Integer.parseInt(idadeStr);
+        }
+
+        String generoStr = request.getParameter("genero");
+        Genero genero = null;
+        if (generoStr != null && !generoStr.isBlank()) {
+            genero = Genero.valueOf(generoStr.toUpperCase());
+        }
+
+        String permitidoStr = request.getParameter("permitido");
+        Boolean permitido = null;
+        if (permitidoStr != null && !permitidoStr.isBlank()) {
+            permitido = Boolean.valueOf(permitidoStr);
+        }
 
         return Procedimento.builder()
                 .nroProcedimento(nroProcedimento)
