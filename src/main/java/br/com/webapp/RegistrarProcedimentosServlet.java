@@ -39,9 +39,6 @@ public class RegistrarProcedimentosServlet extends HttpServlet {
         Procedimento procedimento = service.getProcedimentoObjectFromRequest(request);
         List<String> validations = service.validarProcedimento(procedimento);
 
-        response.setContentType("text/plain");
-        response.setCharacterEncoding("UTF-8");
-
         if (validations.isEmpty()) {
             List<Procedimento> procedimentosIguais = dao.findByParams(procedimento);
 
@@ -63,6 +60,9 @@ public class RegistrarProcedimentosServlet extends HttpServlet {
             responseStatusCode = 500;
         }
 
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("UTF-8");
         response.setStatus(responseStatusCode);
     }
+
 }
