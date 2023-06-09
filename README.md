@@ -81,15 +81,15 @@ O endereço vai ser descrito na propriedade 'IPAddress'
 
 #### 3 - No arquivo [ConnectionFactory.java](src/main/java/br/com/webapp/infra/ConnectionFactory.java) altere o arquivo com as propriedades do seu banco de dados;
 
-### Gera as alterações no banco de dados com o liquibase
-
-``` mvn liquibase:update ```
-
 ### Gera o arquivo '.war' do sistema
 
 dentro do diretório do projeto, utilize o comando
 
 ``` mvn clean package -DskipTests ```
+
+### Gera as alterações no banco de dados com o liquibase
+
+``` mvn liquibase:update ```
 
 ### Cria uma imagem de acordo com as configurações escritas no Dockerfile
 ``` docker build -t webapp . ```
