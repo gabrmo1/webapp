@@ -11,40 +11,64 @@
     <title>Consulta de Procedimentos</title>
 </head>
 <body>
-<%
-%>
-<div class="container">
-    <img src="css/img/Unimed_box_logo.svg.png">
-    <h3 class="text-center mb-4"><b>Consultar Procedimento</b></h3>
-    <form>
-        <div class="form-group">
-            <label for="procedimento">Procedimento:</label>
-            <input type="number" class="form-control" id="procedimento" placeholder="Ex: 1234">
-        </div>
-        <div class="form-group">
-            <label for="idade">Idade:</label>
-            <input type="number" class="form-control" id="idade" placeholder="Ex: 20">
-        </div>
-        <div class="form-group">
-            <label>Gênero:</label><br>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="masculino" name="genero" value="masculino">
-                <label class="form-check-label" for="masculino">Masculino</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="feminino" name="genero" value="feminino">
-                <label class="form-check-label" for="feminino">
-                    Feminino
+    <div class="container">
+        <img src="css/img/Unimed_box_logo.svg.png">
+        <h3 class="text-center mb-4">
+            <b>
+                Consultar Procedimento
+            </b>
+        </h3>
+        <form action="/web-app/consultar-procedimentos" method="get">
+            <div class="form-group">
+                <label for="procedimento">
+                    Procedimento:
                 </label>
+                <input type="number" class="form-control" id="procedimento" name="procedimento" placeholder="Ex: 1234">
+                <p class="text-danger position-absolute">
+                    <%= request.getAttribute("validationProcedimento") != null ? request.getAttribute("validationProcedimento") : "" %>
+                </p>
             </div>
-        </div>
-        <hr/>
-        <button type="submit" class="btn btn-primary w-100">Consultar</button>
-        <p class="text-danger position-absolute"><%= request.getAttribute("validation") != null ? request.getAttribute("validation") : "" %>
-        </p>
-        <a href="/web-app/consultar-procedimentos" class="btn-create">Visualizar procedimentos cadastrados</a>
-    </form>
-    <a href="/web-app/registrar-procedimentos" class="btn-create">Cadastrar novo procedimento</a>
-</div>
+            <div class="form-group">
+                <label for="idade">
+                    Idade:
+                </label>
+                <input type="number" class="form-control" id="idade" name="idade" placeholder="Ex: 20">
+                <p class="text-danger position-absolute">
+                    <%= request.getAttribute("validationIdade") != null ? request.getAttribute("validationIdade") : "" %>
+                </p>
+            </div>
+            <div class="form-group">
+                <label>
+                    Gênero:
+                </label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="masculino" name="genero" value="masculino">
+                    <label class="form-check-label" for="masculino">
+                        Masculino
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="feminino" name="genero" value="feminino">
+                    <label class="form-check-label" for="feminino">
+                        Feminino
+                    </label>
+                </div>
+                <p class="text-danger position-absolute">
+                    <%= request.getAttribute("validationGenero") != null ? request.getAttribute("validationGenero") : "" %>
+                </p>
+            </div>
+            <hr/>
+            <button type="submit" class="btn btn-primary w-100">Consultar</button>
+            <p class="text-danger position-absolute">
+                <%= request.getAttribute("validation") != null ? request.getAttribute("validation") : "" %>
+            </p>
+            <a href="/web-app/consultar-procedimentos" class="btn-create">
+                Visualizar procedimentos cadastrados
+            </a>
+        </form>
+        <a href="/web-app/registrar-procedimentos" class="btn-create">
+            Cadastrar novo procedimento
+        </a>
+    </div>
 </body>
 </html>
